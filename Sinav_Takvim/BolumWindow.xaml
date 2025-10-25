@@ -1,0 +1,108 @@
+﻿<Window x:Class="Sinav_Takvim.BolumWindow"
+        FontSize="20"
+        FontFamily="Eras ITC"
+        Background="DarkGray"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="BolumWindow" WindowState="Maximized" WindowStartupLocation="CenterScreen" Height="1080" Width="1920">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock x:Name="TitleText" HorizontalAlignment="Center"/>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="DersListesiButton" Click="DersListesiButton_Click" 
+                    Content="Ders Listesi&#x0a;Yükle" Height="100" Margin="10" Width="150"/>
+            <Button x:Name="OgrenciListesiButton" Click="OgrenciListesiButton_Click" 
+                    Content="Öğrenci Listesi&#x0a;Yükle" Height="100" Margin="10" Width="150"/>
+            <Button x:Name="DerslikOlusturButton" Click="DerslikOlusturButton_Click" 
+                    Content="Yeni Derslik&#x0a;Oluştur" Height="100" Margin="10" Width="150"/>
+            <Button x:Name="SinavProgramiOlusturButton" Click="SinavProgramiOlusturButton_Click" 
+                    Content="Sınav Programı&#x0a;Oluştur" Height="100" Margin="10" Width="150"/>
+            <Button x:Name="KapatButton" Click="CikisButton_Click"
+                    Content="Çıkış" Height="100" Margin="10" Width="150"/>
+        </StackPanel>
+        
+        <Button x:Name="RefreshButton" Content="Yenile" Click="RefreshButton_Click" 
+                Height="100" Margin="0,0,0,20" Width="200" HorizontalAlignment="Center"/>
+        <ScrollViewer MaxHeight="700" MinHeight="700" Margin="10">
+                <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,30,0">
+                            <TextBox x:Name="DerslikAramaBox" Text="Sınıf kodu ile arayın..." Width="540"/>
+                
+                            <Button x:Name="DerslikAraButton" Content="Ara" Click="DerslikAraButton_Click" Width="170" />
+                        </StackPanel>
+                    
+                        <UniformGrid x:Name="TitleGrid" Columns="7" MinWidth="990" HorizontalAlignment="Left">
+                            <TextBlock Text="Derslik&#x0a;Kodu" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="Derslik&#x0a;Adı" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="Derslik&#x0a;Kapasitesi" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="Satır&#x0a;Sayısı" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="Sütun&#x0a;Sayısı" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="Sıra&#x0a;Yapısı" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock/>
+                        </UniformGrid>
+                
+                        <ScrollViewer MaxHeight="500" MinHeight="500" MaxWidth="1010" HorizontalAlignment="Left">
+                            <UniformGrid x:Name="DersliklerGrid" VerticalAlignment="Top" Columns="7">
+                                    
+                            </UniformGrid>
+                        </ScrollViewer>
+                    </StackPanel>
+            
+            
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="OgrenciAramaBox" Text="Öğrenci numarası ile arayın..." Width="540"/>
+            
+                        <Button x:Name="OgrenciAraButton" Click="OgrenciAraButton_Click" Content="Ara" Width="170" />
+                    </StackPanel>
+                        <UniformGrid x:Name="OgrenciTitleGrid" Columns="3">
+                            <TextBlock Text="Öğrenci&#x0a;Numarası" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="İsim" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="Sınıf" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                        </UniformGrid>
+                    <ScrollViewer MaxHeight="500" MinHeight="500">
+                        <UniformGrid x:Name="OgrenciGrid" VerticalAlignment="Top" Columns="3">
+                            
+                        </UniformGrid>
+                    </ScrollViewer>
+                </StackPanel>
+            </StackPanel>
+        
+                    <StackPanel>
+                        <UniformGrid x:Name="DerslerTitleGrid" MaxWidth="1800" Columns="6">
+                            <TextBlock Text="Ders&#x0a;Kodu" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="İsim" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="Öğretim&#x0a;Elemanı" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="Sınıf" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                            <TextBlock Text="Seçmeli&#x0a;Ders" Background="AliceBlue" 
+                                       Padding="5" Margin="10" TextAlignment="Center"/>
+                        </UniformGrid>
+                        <ScrollViewer MaxHeight="500" MinHeight="500" MaxWidth="1800" Margin="10">
+                            <UniformGrid x:Name="DersGrid" VerticalAlignment="Top" Columns="6">
+                                        
+                            </UniformGrid>
+                        </ScrollViewer>
+                    </StackPanel>
+                </StackPanel>
+        </ScrollViewer>
+        
+    </StackPanel>
+</Window>

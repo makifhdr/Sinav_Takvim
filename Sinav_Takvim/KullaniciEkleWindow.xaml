@@ -1,0 +1,30 @@
+﻿<Window x:Class="Sinav_Takvim.KullaniciEkleWindow" FontSize="20"
+        FontFamily="Eras ITC"
+        WindowStartupLocation="CenterScreen"
+        Background="DarkGray"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="Yeni Kullanıcı Ekle" Height="450" Width="800">
+    <StackPanel>
+        <Label Content="Kullanıcı Kaydı" HorizontalAlignment="Center"/>
+        <UniformGrid Columns="2">
+            <Label Content="E-posta:" HorizontalAlignment="Right"/>
+            <TextBox x:Name="epostaBox" Width="300" HorizontalAlignment="Left"/>
+            <Label Content="Şifre:" HorizontalAlignment="Right"/>
+            <TextBox x:Name="sifreBox" Width="300" HorizontalAlignment="Left"/>
+            <Label Content="Bölüm:" HorizontalAlignment="Right"/>
+            <ComboBox x:Name="BolumComboBox" Width="250" HorizontalAlignment="Left">
+                <ComboBoxItem Content="Bilgisayar Mühendisliği" Tag="Bilgisayar"/>
+                <ComboBoxItem Content="Yazılım Mühendisliği" Tag="Yazilim"/>
+                <ComboBoxItem Content="Elektrik Mühendisliği" Tag="Elektrik"/>
+                <ComboBoxItem Content="Elektronik Mühendisliği" Tag="Elektronik"/>
+                <ComboBoxItem Content="İnşaat Mühendisliği" Tag="Insaat"/>
+            </ComboBox>
+        </UniformGrid>
+        <Button x:Name="OnaylaButton" Click="Onayla_Button_Click" Content="Onayla" Width="100"/>
+        <Label x:Name="ReturnText" HorizontalAlignment="Center"/>
+    </StackPanel>
+</Window>

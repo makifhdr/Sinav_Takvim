@@ -1,0 +1,16 @@
+﻿<Window x:Class="Sinav_Takvim.DerslikSecmeWindow"
+        FontSize="20"
+        FontFamily="Eras ITC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="DerslikSecmeWindow" Height="450" Width="800">
+    <StackPanel>
+        <UniformGrid x:Name="DerslikButtonGrid">
+        
+        </UniformGrid>
+        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Center" TextAlignment="Center" />
+    </StackPanel>
+</Window>

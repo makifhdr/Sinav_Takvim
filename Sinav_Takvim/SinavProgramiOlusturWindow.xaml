@@ -1,0 +1,59 @@
+﻿<Window x:Class="Sinav_Takvim.SinavProgramiOlusturWindow"
+        FontSize="20"
+        FontFamily="Eras ITC"
+        Background="DarkGray"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="SinavProgramiOlusturWindow" WindowStartupLocation="CenterScreen" Height="1000" Width="1000">
+    <StackPanel>
+        <TextBlock Text="Kısıtlar" Background="AliceBlue" Width="100"
+                   Padding="5" Margin="10" TextAlignment="Center"/>
+        <Button x:Name="DersSecimiButton" Click="DersSecimiButton_Click" Content="Ders&#x0a;Seçimi" Height="100" Margin="10" Width="150"/>
+        <StackPanel Height="100" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Margin="10">
+                <TextBlock Text="Başlangıç Tarihi:" Background="AliceBlue" Width="200"
+                           Padding="5" Margin="10" TextAlignment="Center"/>
+                <DatePicker x:Name="BaslangicDatePicker"/>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock Text="Bitiş Tarihi:" Background="AliceBlue" Width="200"
+                           Padding="5" Margin="10" TextAlignment="Center"/>
+                <DatePicker x:Name="BitisDatePicker"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Height="100" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Margin="10">
+                <TextBlock Text="Başlangıç Saati:" Background="AliceBlue" Width="200"
+                           Padding="5" Margin="10" TextAlignment="Center"/>
+                <TextBox x:Name="BaslangicSaatiBox" Text="10"/>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock Text="Bitiş Saati:" Background="AliceBlue" Width="200"
+                           Padding="5" Margin="10" TextAlignment="Center"/>
+                <TextBox x:Name="BitisSaatiBox" Text="17"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Background="AliceBlue" Margin="10">
+            <TextBlock Text="Sınav Türü:" Margin="10"/>
+            <RadioButton x:Name="VizeRadioButton" Content="Vize" GroupName="Sinav_Turu" Margin="10"/>
+            <RadioButton x:Name="FinalRadioButton" Content="Final" GroupName="Sinav_Turu" Margin="10"/>
+            <RadioButton x:Name="ButunlemeRadioButton" Content="Bütünleme" GroupName="Sinav_Turu" Margin="10"/>
+        </StackPanel>
+        <Button x:Name="SinavSuresiButton" Click="SinavSuresiButton_Click" Content="Sınav Süresini&#x0a;Ayarla" Height="100" Margin="10" Width="150"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <TextBlock Text="Bekleme Süresi&#x0a;Ayarla (dk)" Background="AliceBlue" Width="200"
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            <TextBox x:Name="BeklemeSuresiTextBox" Text="15" Height="25" Width="100"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <TextBlock Text="Sınavlar Aynı&#x0a;Zamanda Olsun mu?" Background="AliceBlue" Width="200"
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            <CheckBox x:Name="AyniZamanCheckBox" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Button x:Name="OnaylaButton" Click="ProgramiOlusturButton_Click" Content="Programı&#x0a;Oluştur" Height="100" Margin="10" Width="150"/>
+        <TextBlock x:Name="ResultText" Padding="5" Margin="10" TextAlignment="Center"/>
+    </StackPanel>
+</Window>

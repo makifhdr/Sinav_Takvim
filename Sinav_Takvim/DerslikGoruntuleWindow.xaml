@@ -1,0 +1,54 @@
+﻿<Window x:Class="Sinav_Takvim.DerslikGoruntuleWindow"
+        FontFamily="Eras ITC"
+        WindowStartupLocation="CenterScreen"
+        Background="DarkGray"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="DerslikGoruntuleWindow" WindowState="Maximized" Height="1080" Width="1920">
+    <StackPanel>
+        <UniformGrid Columns="2" Width="600">
+            <TextBlock Text="Derslik Kodu:" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            <TextBlock x:Name="KodTextBlock" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            
+            <TextBlock Text="Derslik Adı:" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            <TextBlock x:Name="AdTextBlock" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            
+            <TextBlock Text="Enine sıra sayısı:" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            <TextBlock x:Name="SatirTextBlock" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            
+            <TextBlock Text="Boyuna sıra sayısı:" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            <TextBlock x:Name="SutunTextBlock" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            
+            <TextBlock Text="Sıra yapısı:" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            <TextBlock x:Name="SiraYapisiTextBlock" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            
+            <TextBlock Text="Kapasite:" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            <TextBlock x:Name="KapasiteTextBlock" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            <TextBlock Text="Öğrenci Sayısı:" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+            <TextBlock x:Name="OgrenciSayisiTextBlock" Background="AliceBlue" 
+                       Padding="5" Margin="10" TextAlignment="Center"/>
+        </UniformGrid>
+        
+        <ScrollViewer MaxHeight="600">
+            <UniformGrid x:Name="DerslikGorselGrid" Margin="5" Width="1820" Height="900" Rows="7" Columns="12">
+            
+            </UniformGrid>
+        </ScrollViewer>
+    </StackPanel>
+</Window>

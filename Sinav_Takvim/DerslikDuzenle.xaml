@@ -1,0 +1,33 @@
+﻿<Window x:Class="Sinav_Takvim.DerslikDuzenle"
+        FontFamily="Eras ITC"
+        WindowStartupLocation="CenterScreen"
+        Background="DarkGray"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="DerslikDuzenle" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Label Content="Derslik Bilgilerini Düzenleyin" HorizontalAlignment="Center"/>
+            <UniformGrid Columns="2">
+                <Label Content="Derslik Kodu:" HorizontalAlignment="Right" Margin="5"/>
+                <TextBox x:Name="derslikKodBox" Width="100" HorizontalAlignment="Left" Margin="5" IsEnabled="False"/>
+                <Label Content="Derslik Adı:" HorizontalAlignment="Right" Margin="5"/>
+                <TextBox x:Name="derslikAdBox" Width="100" HorizontalAlignment="Left" Margin="5"/>
+                <Label Content="Satır sayısı:" HorizontalAlignment="Right" Margin="5"/>
+                <TextBox x:Name="satirSayisiBox" TextChanged="TextBox_OnTextChanged" Width="100" HorizontalAlignment="Left" Margin="5"/>
+                <Label Content="Sütun sayısı:" HorizontalAlignment="Right" Margin="5"/>
+                <TextBox x:Name="sutunSayisiBox" TextChanged="TextBox_OnTextChanged" Width="100" HorizontalAlignment="Left" Margin="5"/>
+                <Label Content="Sıra yapısı:" HorizontalAlignment="Right" Margin="5"/>
+                <TextBox x:Name="siraYapisiBox" TextChanged="TextBox_OnTextChanged" Width="100" HorizontalAlignment="Left" Margin="5"/>
+                <Label Content="Kapasite:" HorizontalAlignment="Right" Margin="5"/>
+                <TextBox x:Name="KapasiteBox" Width="100" HorizontalAlignment="Left" Margin="5"/>
+            </UniformGrid>
+            <Label x:Name="NotText" HorizontalAlignment="Center" Content="Not: Kapasite miktarı sınav kapasitesini belirtmekte olup,&#x0a;yazdığınız değerlere göre oluşturulur."/>
+            <Button x:Name="OnaylaButton" Click="OnaylaButton_Click" Content="Onayla" Width="100"/>
+            <Label x:Name="ReturnText" Content="" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
