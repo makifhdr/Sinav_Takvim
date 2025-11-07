@@ -32,8 +32,10 @@ public partial class DerslikDuzenle
             || !int.TryParse(sutunSayisiBox.Text, out _) || !int.TryParse(siraYapisiBox.Text, out _)
             || !int.TryParse(KapasiteBox.Text, out _))
         {
-            ReturnText.Foreground = new SolidColorBrush(Colors.Red);
-            ReturnText.Content = "Hata: Lütfen girdiğiniz bilgileri kontrol ediniz";
+            MessageBox.Show(
+                "Hata: Lütfen girdiğiniz bilgileri kontrol ediniz",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
         
@@ -41,12 +43,16 @@ public partial class DerslikDuzenle
                 int.Parse(sutunSayisiBox.Text), int.Parse(siraYapisiBox.Text), 
                 int.Parse(KapasiteBox.Text), derslik.GetBolum())))
         {
-            ReturnText.Foreground = new SolidColorBrush(Colors.Red);
-            ReturnText.Content = "Hata: Lütfen bilgileri kontrol ediniz";
+            MessageBox.Show(
+                "Hata: Lütfen bilgileri kontrol ediniz",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
-        ReturnText.Foreground = new SolidColorBrush(Colors.Green);
-        ReturnText.Content = "Derslik Düzenleme Başarılı!";
+        MessageBox.Show(
+            "Derslik Düzenleme Başarılı!",
+            "Uyarı",
+            MessageBoxButton.OK);
     }
     
     private void TextBox_OnTextChanged(object sender, TextChangedEventArgs e)

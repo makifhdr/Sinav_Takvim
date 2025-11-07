@@ -32,6 +32,5 @@
         </ScrollViewer>
         <Button x:Name="ExcelOlusturButton" Content="Excel Oluştur" Click="ExcelOlusturButton_Click"
                 Height="100" Margin="10" Width="200" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="ResultText" Padding="5" Margin="10" TextAlignment="Center"/>
     </StackPanel>
 </Window>

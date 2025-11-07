@@ -40,7 +40,7 @@ public partial class DerslikGoruntuleWindow
         DerslikGorselGrid.Rows = satir;
         DerslikGorselGrid.Columns = gercek_sutun;
 
-        int siraNumber = 0;
+        int siraNumber = sira_yapisi == 2 ? 1 : 0;;
 
         int a = 0;
 
@@ -84,10 +84,10 @@ public partial class DerslikGoruntuleWindow
                 else
                 {
                     DerslikGorselGrid.Children.Add(new Rectangle());
-                    siraNumber = 0;
+                    siraNumber = sira_yapisi == 2 ? 1 : 0;
                 }
             }
-            siraNumber = 0;
+            siraNumber = sira_yapisi == 2 ? 1 : 0;
         }
     }
 }

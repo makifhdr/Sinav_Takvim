@@ -56,7 +56,7 @@ public class DerslikDAO
         return false;
     }
 
-    public bool DerslikSil(string kod)
+    public void DerslikSil(string kod)
     {
         try
         {
@@ -66,7 +66,6 @@ public class DerslikDAO
                 using (var sqlCMD = new NpgsqlCommand($"DELETE FROM derslik WHERE kod = '{kod}'", conn))
                 {
                     sqlCMD.ExecuteNonQuery();
-                    return true;
                 }
             }
         }
@@ -74,8 +73,6 @@ public class DerslikDAO
         {
             Console.WriteLine(e);
         }
-
-        return false;
     }
 
     public List<Derslik> GetDerslikListesi(Bolum bolum)

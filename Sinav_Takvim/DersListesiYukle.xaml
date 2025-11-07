@@ -24,6 +24,5 @@
                        Foreground="White"/>
         </Border>
         <Button x:Name="DersYukleButton" Click="DersYukleButton_Click" Content="Yükle" Width="100" Height="100"/>
-        <TextBlock x:Name="ResultText" HorizontalAlignment="Center"/>
     </StackPanel>
 </Window>

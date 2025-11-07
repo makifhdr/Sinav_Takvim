@@ -30,8 +30,10 @@
                 <StackPanel>
                         <StackPanel Orientation="Horizontal">
                     <StackPanel>
+                        <TextBlock Text="Derslik Listesi" Background="AliceBlue" 
+                                   Padding="5" Margin="10" TextAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,30,0">
-                            <TextBox x:Name="DerslikAramaBox" Text="Sınıf kodu ile arayın..." Width="540"/>
+                            <TextBox x:Name="DerslikAramaBox" Text="Sınıf kodu ile arayın..." Width="790"/>
                 
                             <Button x:Name="DerslikAraButton" Content="Ara" Click="DerslikAraButton_Click" Width="170" />
                         </StackPanel>
@@ -61,12 +63,14 @@
             
             
                 <StackPanel>
+                    <TextBlock Text="Öğrenci Listesi" Background="AliceBlue" 
+                               Padding="5" Margin="10" TextAlignment="Center"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="OgrenciAramaBox" Text="Öğrenci numarası ile arayın..." Width="540"/>
             
                         <Button x:Name="OgrenciAraButton" Click="OgrenciAraButton_Click" Content="Ara" Width="170" />
                     </StackPanel>
-                        <UniformGrid x:Name="OgrenciTitleGrid" Columns="3">
+                        <UniformGrid x:Name="OgrenciTitleGrid" Columns="3" Width="710" HorizontalAlignment="Left">
                             <TextBlock Text="Öğrenci&#x0a;Numarası" Background="AliceBlue" 
                                        Padding="5" Margin="10" TextAlignment="Center"/>
                             <TextBlock Text="İsim" Background="AliceBlue" 
@@ -75,7 +79,7 @@
                                        Padding="5" Margin="10" TextAlignment="Center"/>
                         </UniformGrid>
                     <ScrollViewer MaxHeight="500" MinHeight="500">
-                        <UniformGrid x:Name="OgrenciGrid" VerticalAlignment="Top" Columns="3">
+                        <UniformGrid x:Name="OgrenciGrid" VerticalAlignment="Top" Columns="3" Width="710">
                             
                         </UniformGrid>
                     </ScrollViewer>
@@ -83,7 +87,9 @@
             </StackPanel>
         
                     <StackPanel>
-                        <UniformGrid x:Name="DerslerTitleGrid" MaxWidth="1800" Columns="6">
+                        <TextBlock Text="Ders Listesi" Background="AliceBlue" 
+                                   Padding="5" Margin="10" TextAlignment="Center"/>
+                        <UniformGrid x:Name="DerslerTitleGrid" Width="1780" Columns="6" HorizontalAlignment="Left">
                             <TextBlock Text="Ders&#x0a;Kodu" Background="AliceBlue" 
                                        Padding="5" Margin="10" TextAlignment="Center"/>
                             <TextBlock Text="İsim" Background="AliceBlue" 
@@ -95,8 +101,8 @@
                             <TextBlock Text="Seçmeli&#x0a;Ders" Background="AliceBlue" 
                                        Padding="5" Margin="10" TextAlignment="Center"/>
                         </UniformGrid>
-                        <ScrollViewer MaxHeight="500" MinHeight="500" MaxWidth="1800" Margin="10">
-                            <UniformGrid x:Name="DersGrid" VerticalAlignment="Top" Columns="6">
+                        <ScrollViewer MaxHeight="500" MinHeight="500" Width="1800">
+                            <UniformGrid x:Name="DersGrid" VerticalAlignment="Top" Columns="6" HorizontalAlignment="Left">
                                         
                             </UniformGrid>
                         </ScrollViewer>

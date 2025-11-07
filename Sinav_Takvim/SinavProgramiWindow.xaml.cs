@@ -13,7 +13,6 @@ public partial class SinavProgramiWindow
     private DateTime bitisTarihi;
     private SinavTuru sinavTuru;
     private int beklemeSuresi;
-    private bool ayniZaman;
     private Bolum bolum;
     private (int baslangic, int bitis) saatAraligi;
     
@@ -32,7 +31,6 @@ public partial class SinavProgramiWindow
         this.bitisTarihi = bitisTarihi;
         this.sinavTuru = sinavTuru;
         this.beklemeSuresi = beklemeSuresi;
-        this.ayniZaman = ayniZaman;
         this.bolum = bolum;
         this.saatAraligi = saatAraligi;
         InitializeComponent();
@@ -49,7 +47,7 @@ public partial class SinavProgramiWindow
         
         sinavList = [];
         
-        var isGunuSayisi = HesaplaIsGunu(baslangicTarihi, bitisTarihi);
+        var isGunuSayisi = HesaplaSinavGunu(baslangicTarihi, bitisTarihi);
         
         var sinifSinavDagilimi = new Dictionary<int, List<int>>
         {
@@ -165,7 +163,7 @@ public partial class SinavProgramiWindow
         SinavListesiCiz();
     }
     
-    private int HesaplaIsGunu(DateTime baslangic, DateTime bitis)
+    private int HesaplaSinavGunu(DateTime baslangic, DateTime bitis)
     {
         int sayac = 0;
 
@@ -202,7 +200,7 @@ public partial class SinavProgramiWindow
         
         sinavList = [];
         
-        var isGunuSayisi = HesaplaIsGunu(baslangicTarihi, bitisTarihi);
+        var isGunuSayisi = HesaplaSinavGunu(baslangicTarihi, bitisTarihi);
         
         var sinifSinavDagilimi = new Dictionary<int, List<int>>
         {
@@ -485,14 +483,20 @@ public partial class SinavProgramiWindow
                 ws.Column(5).Width = 20;
 
                 wb.SaveAs(filePath);
-
-                ResultText.Text = $"Excel başarıyla oluşturuldu: {filePath}";
+                
+                MessageBox.Show(
+                    $"Excel başarıyla oluşturuldu: {filePath}",
+                    "Uyarı",
+                    MessageBoxButton.OK);
 
             }
         }
         catch (IOException ex)
         {
-            ResultText.Text = "Dosya başka bir program tarafından kullanılıyor!";
+            MessageBox.Show(
+                "Dosya başka bir program tarafından kullanılıyor!",
+                "Uyarı",
+                MessageBoxButton.OK);
         }
 
     }

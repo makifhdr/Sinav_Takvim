@@ -46,7 +46,7 @@
         </UniformGrid>
         
         <ScrollViewer MaxHeight="600">
-            <UniformGrid x:Name="DerslikGorselGrid" Margin="5" Width="1820" Height="900" Rows="7" Columns="12">
+            <UniformGrid x:Name="DerslikGorselGrid" Margin="5" Width="1820" Rows="7" Columns="12">
             
             </UniformGrid>
         </ScrollViewer>

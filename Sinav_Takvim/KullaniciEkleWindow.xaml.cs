@@ -16,17 +16,21 @@ public partial class KullaniciEkleWindow
     {
         if (BolumComboBox.SelectedItem is ComboBoxItem selectedItem)
         {
-            if (KullaniciDAO.KullaniciEkle(epostaBox.Text, sifreBox.Text,
+            if (!KullaniciDAO.KullaniciEkle(epostaBox.Text, sifreBox.Text,
                     Enum.Parse<Bolum>(selectedItem.Tag.ToString() ?? throw new InvalidOperationException())))
             {
-                ReturnText.Foreground = new SolidColorBrush(Colors.Green);
-                ReturnText.Content = "Kullanıcı kaydı başarılı!";
+                MessageBox.Show(
+                    "Hatalı veri girişi",
+                    "Uyarı",
+                    MessageBoxButton.OK);
+                return;
             }
-            else
-            {
-                ReturnText.Foreground = new SolidColorBrush(Colors.Red);
-                ReturnText.Content = "Hatalı veri girişi";
-            }
+            MessageBox.Show(
+                "Kullanıcı kaydı başarılı!",
+                "Uyarı",
+                MessageBoxButton.OK);
+            Close();
+            
         }
         
     }

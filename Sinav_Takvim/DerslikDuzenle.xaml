@@ -27,7 +27,6 @@
             </UniformGrid>
             <Label x:Name="NotText" HorizontalAlignment="Center" Content="Not: Kapasite miktarı sınav kapasitesini belirtmekte olup,&#x0a;yazdığınız değerlere göre oluşturulur."/>
             <Button x:Name="OnaylaButton" Click="OnaylaButton_Click" Content="Onayla" Width="100"/>
-            <Label x:Name="ReturnText" Content="" HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Window>

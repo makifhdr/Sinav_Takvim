@@ -61,18 +61,32 @@ public partial class SinavProgramiOlusturWindow
 
     private void ProgramiOlusturButton_Click(object sender, RoutedEventArgs e)
     {
+        var dersListesi = DersSecimiWindow.GetDersSinav();
+        if (dersListesi.Count == 0)
+        {
+            MessageBox.Show(
+                "Lütfen sınavlar için ders seçimi yapınız!",
+                "Uyarı",
+                MessageBoxButton.OK);
+            return;
+        }
+        
         var dersVeSureListesi = SinavSuresiWindow.GetDersSureListesi();
         if (dersVeSureListesi.Count == 0)
         {
-            ResultText.Foreground = new SolidColorBrush(Colors.Red);
-            ResultText.Text = "Lütfen sınavlar için süre ayarlaması yapınız!";
+            MessageBox.Show(
+                "Lütfen sınavlar için süre ayarlaması yapınız!",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
         
         if (BaslangicDatePicker.SelectedDate == null || BitisDatePicker.SelectedDate == null)
         {
-            ResultText.Foreground = new SolidColorBrush(Colors.Red);
-            ResultText.Text = "Lütfen tarih seçimlerini kontrol ediniz!";
+            MessageBox.Show(
+                "Lütfen tarih seçimlerini kontrol ediniz!",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
 
@@ -80,8 +94,10 @@ public partial class SinavProgramiOlusturWindow
         var bitisTarihi = BitisDatePicker.SelectedDate.Value;
         if (baslangicTarihi > bitisTarihi)
         {
-            ResultText.Foreground = new SolidColorBrush(Colors.Red);
-            ResultText.Text = "Başlangıç tarihi bitiş tarihinden önce olmalı!";
+            MessageBox.Show(
+                "Başlangıç tarihi bitiş tarihinden önce olmalı!",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
 
@@ -92,8 +108,10 @@ public partial class SinavProgramiOlusturWindow
         }
         else
         {
-            ResultText.Foreground = new SolidColorBrush(Colors.Red);
-            ResultText.Text = "Lütfen girilen saat değerlerini kontrol ediniz!";
+            MessageBox.Show(
+                "Lütfen girilen saat değerlerini kontrol ediniz!",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
         
@@ -104,23 +122,29 @@ public partial class SinavProgramiOlusturWindow
         }
         else
         {
-            ResultText.Foreground = new SolidColorBrush(Colors.Red);
-            ResultText.Text = "Lütfen girilen saat değerlerini kontrol ediniz!";
+            MessageBox.Show(
+                "Lütfen girilen saat değerlerini kontrol ediniz!",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
 
         if (baslangicSaati > bitisSaati)
         {
-            ResultText.Foreground = new SolidColorBrush(Colors.Red);
-            ResultText.Text = "Başlangıç saati bitiş saatinden önce olmalı!";
+            MessageBox.Show(
+                "Başlangıç saati bitiş saatinden önce olmalı!",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
         
         var sinavTuru = GetSinavSelection();
         if (sinavTuru == SinavTuru.Null)
         {
-            ResultText.Foreground = new SolidColorBrush(Colors.Red);
-            ResultText.Text = "Lütfen sınav türü için seçim yapın!";
+            MessageBox.Show(
+                "Lütfen sınav türü için seçim yapın!",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
 
@@ -129,8 +153,10 @@ public partial class SinavProgramiOlusturWindow
             beklemeSuresi = result;
         else
         {
-            ResultText.Foreground = new SolidColorBrush(Colors.Red);
-            ResultText.Text = "Lütfen bekleme süresini yazınız!";
+            MessageBox.Show(
+                "Lütfen bekleme süresini yazınız!",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
         

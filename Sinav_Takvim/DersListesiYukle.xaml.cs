@@ -56,20 +56,27 @@ public partial class DersListesiYukle
 
                 if (sonuc == -1)
                 {
-                    ResultText.Foreground = new SolidColorBrush(Colors.Green);
-                    ResultText.Text = "Ders listesi yükleme işlemi başarılı!";
+                    MessageBox.Show(
+                        $"Ders listesi başarıyla yüklendi.",
+                        "Uyarı",
+                        MessageBoxButton.OK);
+                    Close();
                 }
                 else
                 {
-                    ResultText.Foreground = new SolidColorBrush(Colors.Red);
-                    ResultText.Text = $"Hata: Satır {sonuc}";
+                    MessageBox.Show(
+                        $"Hata: Satır {sonuc}",
+                        "Uyarı",
+                        MessageBoxButton.OK);
                 }
             }
         }
         else
         {
-            ResultText.Foreground = new SolidColorBrush(Colors.Red);
-            ResultText.Text = $"Dosya bulunamadı.";
+            MessageBox.Show(
+                "Dosya bulunamadı.",
+                "Uyarı",
+                MessageBoxButton.OK);
         }
     }
 }

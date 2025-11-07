@@ -21,6 +21,7 @@ public partial class DerslikSecmeWindow
         this.sinav = sinav;
         this.ogrenciList = ogrenciList;
         InitializeComponent();
+        BaslikTextBlock.Text = sinav.GetDers().GetAd() + " Dersinin Sınavı";
         DerslikButonlarCiz();
     }
 
@@ -140,7 +141,7 @@ public partial class DerslikSecmeWindow
 
             var fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
             var bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            var trFont = new Font(bf, 6);
+            var trFont = new Font(bf, 8);
 
             for (var i = 0; i < satir; i++)
             {
@@ -188,12 +189,18 @@ public partial class DerslikSecmeWindow
             }
 
             doc.Close();
-
-            ResultTextBlock.Text = "PDF oluşturma başarılı! Dosya konumu:\n" + filePath;
+            
+            MessageBox.Show(
+                $"PDF oluşturma başarılı! Dosya konumu:\n{filePath}",
+                "Uyarı",
+                MessageBoxButton.OK);
         }
         catch (IOException ex)
         {
-            ResultTextBlock.Text = "Dosya başka bir program tarafından kullanılıyor!";
+            MessageBox.Show(
+                "Dosya başka bir program tarafından kullanılıyor!",
+                "Uyarı",
+                MessageBoxButton.OK);
         }
     }
 }

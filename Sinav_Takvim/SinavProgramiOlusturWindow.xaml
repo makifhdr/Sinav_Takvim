@@ -54,6 +54,5 @@
             <CheckBox x:Name="AyniZamanCheckBox" VerticalAlignment="Center"/>
         </StackPanel>
         <Button x:Name="OnaylaButton" Click="ProgramiOlusturButton_Click" Content="Programı&#x0a;Oluştur" Height="100" Margin="10" Width="150"/>
-        <TextBlock x:Name="ResultText" Padding="5" Margin="10" TextAlignment="Center"/>
     </StackPanel>
 </Window>

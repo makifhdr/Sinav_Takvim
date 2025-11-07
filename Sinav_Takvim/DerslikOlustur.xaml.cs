@@ -21,8 +21,10 @@ public partial class DerslikOlustur
             || !int.TryParse(sutunSayisiBox.Text, out _) || !int.TryParse(siraYapisiBox.Text, out _)
             || !int.TryParse(KapasiteBox.Text, out _))
         {
-            ReturnText.Foreground = new SolidColorBrush(Colors.Red);
-            ReturnText.Content = "Hata: Lütfen girdiğiniz bilgileri kontrol ediniz";
+            MessageBox.Show(
+                "Hata: Lütfen girdiğiniz bilgileri kontrol ediniz",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
         
@@ -30,12 +32,18 @@ public partial class DerslikOlustur
                 int.Parse(sutunSayisiBox.Text), int.Parse(siraYapisiBox.Text), 
                 int.Parse(KapasiteBox.Text), bolum)))
         {
-            ReturnText.Foreground = new SolidColorBrush(Colors.Red);
-            ReturnText.Content = "Hata: Bu derslik kodu ile bir derslik zaten mevcut!\nFarklı bir derslik numarası girmeyi deneyin.";
+            MessageBox.Show(
+                "Hata: Bu derslik kodu ile bir derslik zaten mevcut! " +
+                "Farklı bir derslik numarası girmeyi deneyin.",
+                "Uyarı",
+                MessageBoxButton.OK);
             return;
         }
-        ReturnText.Foreground = new SolidColorBrush(Colors.Green);
-        ReturnText.Content = "Derslik ekleme başarılı!";
+        MessageBox.Show(
+            "Derslik ekleme başarılı!",
+            "Uyarı",
+            MessageBoxButton.OK);
+        Close();
     }
     
 

@@ -15,7 +15,7 @@ public class ExcelReader
         GetOgrenciDersDAO.OgrenciDerslerSil(bolum);
         GetDersDAO.DerslerSil(bolum);
         GetListeYukleStatusDAO.SetDersListesi(bolum, false);
-        
+        //BLM435
         using var workbook = new XLWorkbook(filePath);
         var worksheet = workbook.Worksheet(1);
         int sinif = 0;
@@ -24,18 +24,10 @@ public class ExcelReader
         int kod = 0;
         int ad = 0;
         int ogretmen = 0;
-        
+
         foreach (var row in worksheet.RowsUsed())
         {
-            if (row.Cell(1).Value.ToString().Contains("Sınıf"))
-            {
-                var ilk = row.Cell(1).Value.ToString().First();
-                sinif = int.Parse(ilk.ToString());
-                secmeli = false;
-            }
-            else if(row.Cell(1).Value.ToString().StartsWith("SEÇ")) secmeli = true;
-
-            else if (row.Cell(1).Value.ToString().Equals("DERS KODU") ||
+            if (row.Cell(1).Value.ToString().Equals("DERS KODU") ||
                      row.Cell(1).Value.ToString().Equals("DERSİN ADI") ||
                      row.Cell(1).Value.ToString().Equals("DERSİ VEREN ÖĞR. ELEMANI"))
             {
@@ -75,9 +67,21 @@ public class ExcelReader
                         ogretmen = 3;
                         break;
                 }
+                break;
             }
+        }
+        
+        foreach (var row in worksheet.RowsUsed())
+        {
+            if (row.Cell(1).Value.ToString().Contains("Sınıf"))
+            {
+                var ilk = row.Cell(1).Value.ToString().First();
+                sinif = int.Parse(ilk.ToString());
+                secmeli = false;
+            }
+            else if(row.Cell(1).Value.ToString().StartsWith("SEÇ")) secmeli = true;
             
-            else if(!row.Cell(1).Value.ToString().Equals("DERS KODU"))
+            else if(!row.Cell(kod).Value.ToString().Equals("DERS KODU"))
             {
                 if (string.IsNullOrWhiteSpace(row.Cell(kod).ToString())
                     || string.IsNullOrWhiteSpace(row.Cell(ad).ToString())

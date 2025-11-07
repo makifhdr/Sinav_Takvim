@@ -25,6 +25,5 @@
             </ComboBox>
         </UniformGrid>
         <Button x:Name="OnaylaButton" Click="Onayla_Button_Click" Content="Onayla" Width="100"/>
-        <Label x:Name="ReturnText" HorizontalAlignment="Center"/>
     </StackPanel>
 </Window>

@@ -8,9 +8,9 @@
         mc:Ignorable="d"
         Title="DerslikSecmeWindow" Height="450" Width="800">
     <StackPanel>
+        <TextBlock x:Name="BaslikTextBlock" HorizontalAlignment="Center" TextAlignment="Center"/>
         <UniformGrid x:Name="DerslikButtonGrid">
         
         </UniformGrid>
-        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Center" TextAlignment="Center" />
     </StackPanel>
 </Window>
